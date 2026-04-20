@@ -1,0 +1,20 @@
+when:
+  - event: manual
+  - event: push
+    branch: master
+
+steps:
+  - name: docker_build_push
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      repo: ghcr.io/blazingasher/manual-pipeline-action
+      platforms: linux/amd64
+      dockerfile: Dockerfile
+      tags:
+        - latest
+      registry: ghcr.io
+      username:
+        from_secret: GHCR_USERNAME
+      password:
+        from_secret: GHCR_TOKEN
+
