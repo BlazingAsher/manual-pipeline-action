@@ -89,4 +89,4 @@ Response:
 { "interaction_url": "http://your-host/i/...", "poll_url": "http://your-host/poll/..." }
 ```
 
-`GET /poll/{id}` returns `{"answer": null}` while waiting, `{"answer": "Yes"}` once answered.
+`GET /poll/{id}` returns `{"answer": null}` while waiting, `{"answer": "<answered option>"}` once answered.
